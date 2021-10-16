@@ -19,7 +19,6 @@ class NewsCubit extends Cubit<NewsStates>
     const BusinessScreen(),
     const SportsScreen(),
     const ScienceScreen(),
-    const SettingScreen(),
   ];
 
   List<String> titles =
@@ -27,7 +26,6 @@ class NewsCubit extends Cubit<NewsStates>
     'Business',
     'Sports',
     'Science',
-    'Setting',
   ];
 
   int currentIndex = 0;
@@ -120,6 +118,7 @@ class NewsCubit extends Cubit<NewsStates>
       emit(NewsGetScienceErrorState(error.toString()));
     });
   }
+
 
 
 

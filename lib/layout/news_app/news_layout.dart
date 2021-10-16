@@ -6,6 +6,7 @@ import 'package:news_apis/modules/business/business.dart';
 import 'package:news_apis/modules/setting/setting.dart';
 import 'package:news_apis/shared/network/remote/dio_helper.dart';
 import 'package:news_apis/shared/styles/Iconly-Broken_icons.dart';
+import 'package:news_apis/shared/styles/themes/cubit.dart';
 
 class NewsLayout extends StatelessWidget {
   const NewsLayout({Key? key}) : super(key: key);
@@ -33,6 +34,15 @@ class NewsLayout extends StatelessWidget {
                   Iconly_Broken.Search
                 ),
                 ),
+                IconButton(
+                  onPressed: ()
+                  {
+                    ThemeModeCubit.get(context).changeAppMode();
+                  },
+                  icon: const Icon(
+                      Icons.brightness_4_outlined
+                  ),
+                ),
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
@@ -55,10 +65,7 @@ class NewsLayout extends StatelessWidget {
                    Icon(
                        Icons.science
                    ),label: 'Science'),
-                   BottomNavigationBarItem(icon:
-                   Icon(
-                       Iconly_Broken.Setting
-                   ),label: 'Setting'),
+
                 ],
             ),
             body: cubit.screens[cubit.currentIndex],

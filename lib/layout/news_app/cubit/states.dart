@@ -37,3 +37,5 @@ class NewsGetScienceErrorState extends NewsStates
 
   NewsGetScienceErrorState(this.error);
 }
+
+

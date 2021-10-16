@@ -31,18 +31,16 @@ Widget buildArticlesItem(context, article)=>Padding(
               Expanded(
                 child: Text(
                   '${article['title']}',
-                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                    fontFamily: 'Jannah',
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18.0,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                   maxLines: 4,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
                Text(
                   '${article['publishedAt']}',
+                 style: const TextStyle(
+                   color: Colors.grey,
+                 ),
               ),
             ],
           ),
