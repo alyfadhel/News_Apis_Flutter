@@ -11,7 +11,11 @@ ThemeData lightTheme =  ThemeData(
     selectedItemColor: Colors.deepOrange,
     type: BottomNavigationBarType.fixed,
   ),
-  appBarTheme:  AppBarTheme(
+  primarySwatch: Colors.deepOrange,
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    backgroundColor: Colors.deepOrange
+  ),
+  appBarTheme:  const AppBarTheme(
     elevation: 0.0,
     backgroundColor: Colors.white,
     iconTheme: IconThemeData(

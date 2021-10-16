@@ -3,11 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_apis/layout/news_app/cubit/cubit_observer.dart';
 import 'package:news_apis/layout/news_app/news_layout.dart';
-import 'package:news_apis/shared/styles/Themes.dart';
+import 'package:news_apis/shared/network/remote/dio_helper.dart';
+import 'package:news_apis/shared/styles/themes.dart';
 
 
 void main() {
   Bloc.observer = MyBlocObserver();
+  DioHelper.init();
   runApp(const MyApp());
 }
 
