@@ -18,13 +18,14 @@ ThemeData lightTheme =  ThemeData(
   ),
   textTheme: const TextTheme(
     bodyText1: TextStyle(
-      fontSize: 18.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.w600,
       fontFamily: "Jannah",
       color: Colors.black,
     ),
   ),
   appBarTheme:  const AppBarTheme(
+    titleSpacing: 20.0,
     elevation: 0.0,
     backgroundColor: Colors.white,
     iconTheme: IconThemeData(
@@ -56,13 +57,14 @@ ThemeData darkTheme = ThemeData(
       const FloatingActionButtonThemeData(backgroundColor: Colors.deepOrange),
   textTheme: const TextTheme(
     bodyText1: TextStyle(
-      fontSize: 18.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.w600,
       fontFamily: "Jannah",
       color: Colors.white,
     ),
   ),
   appBarTheme: AppBarTheme(
+    titleSpacing: 20.0,
     elevation: 0.0,
     backgroundColor: HexColor('333739'),
     iconTheme: const IconThemeData(
