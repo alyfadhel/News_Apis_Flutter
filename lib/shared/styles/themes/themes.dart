@@ -61,6 +61,7 @@ ThemeData darkTheme = ThemeData(
       fontWeight: FontWeight.w600,
       fontFamily: "Jannah",
       color: Colors.white,
+
     ),
   ),
   appBarTheme: AppBarTheme(

@@ -29,10 +29,14 @@ class MyApp extends StatelessWidget {
   const MyApp(this.isDark); // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  BlocProvider(
-      create: (BuildContext context) =>ThemeModeCubit()..changeAppMode(
-        fromShared: isDark,
-      ),
+    return  MultiBlocProvider(
+      providers:
+      [
+        BlocProvider(create: (context) => NewsCubit()..getBusiness()..getSports()..getScience(),),
+        BlocProvider(create: (BuildContext context) =>ThemeModeCubit()..changeAppMode(
+          fromShared: isDark,
+        ),),
+      ],
       child: BlocConsumer<ThemeModeCubit,ThemeModeStates>(
         listener: (context, state) {
 

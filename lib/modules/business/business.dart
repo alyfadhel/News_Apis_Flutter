@@ -16,20 +16,20 @@ class BusinessScreen extends StatelessWidget {
       },
       builder: (context, state) {
 
-        var cubitBusiness = NewsCubit.get(context).business;
+        var list = NewsCubit.get(context).business;
 
         return Conditional.single(
           context: context,
           conditionBuilder: (context) => state is ! NewsGetBusinessLoadingState,
           widgetBuilder: (context) => ListView.separated(
               physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => buildArticlesItem(context, cubitBusiness[index]),
+              itemBuilder: (context, index) => buildArticlesItem(context, list[index]),
               separatorBuilder: (context, index) => Container(
                 width: double.infinity,
                 height: 1.0,
                 color: Colors.grey[300],
               ),
-              itemCount: NewsCubit.get(context).business.length,
+              itemCount: list.length,
           ),
           fallbackBuilder: (context) => const Center(child: CircularProgressIndicator()),
         );
