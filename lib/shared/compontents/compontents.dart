@@ -8,208 +8,63 @@ import 'package:news_apis/modules/search/search.dart';
 import 'package:news_apis/modules/web_view/web_view.dart';
 
 Widget buildArticlesItem(context, article,index)=>Container(
-  color: NewsCubit.get(context).selectedBusinessItem == index && NewsCubit.get(context).isDesktop ? Colors.grey[350] : null,
-  child:   InkWell(
-
-    onTap: ()
-
-    {
-     // Navigator.push(context, MaterialPageRoute(builder: (context) =>  WebViewScreen(article['url'])));
-      NewsCubit.get(context).businessSelectItem(index);
-    },
-
-    child:   Padding(
-
-
-
-      padding: const EdgeInsets.all(20.0),
-
-
-
-      child: Row(
-
-
-
-        children:
-
-
-
-        [
-
-
-
-          Container(
-
-
-
-            height: 120.0,
-
-
-
-            width: 120.0,
-
-
-
-            decoration: BoxDecoration(
-
-
-
-              borderRadius: BorderRadius.circular(10.0),
-
-
-
-              image:  DecorationImage(
-
-
-
-                image: NetworkImage('${article['urlToImage']}'),
-
-
-
-                fit: BoxFit.cover,
-
-
-
-              ),
-
-
-
-            ),
-
-
-
-          ),
-
-
-
-          const SizedBox(
-
-
-
-            width: 20.0,
-
-
-
-          ),
-
-
-
-          Expanded(
-
-
-
-            child: SizedBox(
-
-
-
-              height: 120.0,
-
-
-
-              child: Column(
-
-
-
-                mainAxisAlignment: MainAxisAlignment.start,
-
-
-
-                crossAxisAlignment: CrossAxisAlignment.start,
-
-
-
-                children:
-
-
-
-                [
-
-
-
-                  Expanded(
-
-
-
-                    child: Text(
-
-
-
-                      '${article['title']}',
-
-
-
-                      style: Theme.of(context).textTheme.bodyText1,
-
-
-
-                      maxLines: 3,
-
-
-
-                      overflow: TextOverflow.ellipsis,
-
-
-
-                    ),
-
-
-
+      color: NewsCubit.get(context).selectedBusinessItem == index &&
+              NewsCubit.get(context).isDesktop
+          ? Colors.grey[350]
+          : null,
+      child: InkWell(
+        onTap: () {
+          // Navigator.push(context, MaterialPageRoute(builder: (context) =>  WebViewScreen(article['url'])));
+          NewsCubit.get(context).businessSelectItem(index);
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Row(
+            children: [
+              Container(
+                height: 120.0,
+                width: 120.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  image: DecorationImage(
+                    image: NetworkImage('${article['urlToImage']}'),
+                    fit: BoxFit.cover,
                   ),
-
-
-
-                   Text(
-
-
-
-                      '${article['publishedAt']}',
-
-
-
-                     style: const TextStyle(
-
-
-
-                       color: Colors.grey,
-
-
-
-                     ),
-
-
-
-                  ),
-
-
-
-                ],
-
-
-
+                ),
               ),
-
-
-
-            ),
-
-
-
+              const SizedBox(
+                width: 20.0,
+              ),
+              Expanded(
+                child: SizedBox(
+                  height: 120.0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          '${article['title']}',
+                          style: Theme.of(context).textTheme.bodyText1,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      Text(
+                        '${article['publishedAt']}',
+                        style: const TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-
-
-
-        ],
-
-
-
+        ),
       ),
-
-
-
-    ),
-
-  ),
-);
+    );
 
 //------------------------------------------------------------------
 
